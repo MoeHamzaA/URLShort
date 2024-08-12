@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div class="container" id="formContainer">
+        <div class="header">
+            <h1>URL Shortener</h1>
+        </div>
+        
+        <div class="formArea">
+            <form method="POST" action="{{ url_for('index') }}">
+                <div class="inputArea">
+                    <input class="input" type="url" name="long_url" placeholder="Enter long URL" required>
+                </div>
+                
+                <div class="buttonArea">
+                    <button type="submit" class="button" onclick="collapseForm()">Shorten</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    
+</body>
+</html>
